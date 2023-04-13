@@ -7,8 +7,10 @@ This repository will loosely track the official mapbox repository SEMVER minor r
 ### Installing
 
 ```
-npm install @chloris-geospatial/maplibre-gl-draw
+// install from github, npm package coming soon.
+npm install git@github.com:chloris-geospatial/maplibre-gl-draw.git
 ```
+
 
 Draw ships with CSS, make sure you include it in your build.
 
