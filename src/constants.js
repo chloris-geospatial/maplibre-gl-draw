@@ -109,5 +109,7 @@ export function updateConstant(name, key, value) {
   if (name === 'classes'){
     classes[key] = value;
   }
-  throw new Error('Not Implemented');
+  else {
+    throw new Error('Not Implemented');
+  }
 }

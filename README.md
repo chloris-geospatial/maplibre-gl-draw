@@ -20,28 +20,33 @@ Draw ships with CSS, make sure you include it in your build.
 
 ```js
 import mapboxgl from 'mapbox-gl';
-import MapboxDraw from "@mapbox/mapbox-gl-draw";
+import MapboxDraw from "@chloris-geospatial/maplibre-gl-draw";
+// or
+import maplibregl from 'maplibre-gl';
+import maplibreGlDraw from "@chloris-geospatial/maplibre-gl-draw";
+MapboxDraw.enableMapLibre();
 ```
 
 #### CSS
 
 **When using modules**
  ```js
-import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css'
+import '@chloris-geospatial/maplibre-gl-draw/dist/mapbox-gl-draw.css'
+// or
+import '@chloris-geospatial/maplibre-gl-draw/dist/maplibre-gl-draw.css'
  ```
 
 
 ### Example usage
 
 ```js
-mapboxgl.accessToken = 'YOUR_ACCESS_TOKEN';
-
-var map = new mapboxgl.Map({
+var map = new maplibregl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v12',
-  center: [40, -74.50],
+  style: 'https://demotiles.maplibre.org/style.json',
+  center: [-74.5, 40], // starting position [lng, lat]
   zoom: 9
 });
+MapboxDraw.enableMapLibre(); // not needed if you are using mapbox-gl-js
 
 var Draw = new MapboxDraw();
 
@@ -56,9 +61,7 @@ map.on('load', function() {
 });
 ```
 
-https://www.mapbox.com/mapbox-gl-js/example/mapbox-gl-draw/
-
-### See [API.md](https://github.com/mapbox/mapbox-gl-draw/blob/main/docs/API.md) for complete reference.
+### See also [API.md](https://github.com/mapbox/mapbox-gl-draw/blob/main/docs/API.md).
 
 
 ### Developing and testing

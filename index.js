@@ -4,9 +4,9 @@ import setupAPI from './src/api';
 import * as Constants from './src/constants';
 import * as lib from './src/lib';
 
-const setMapLibCSSPrefix = function(prefix) {
+const enableMapLibre = function() {
   for (const key in Constants.classes) {
-    Constants.updateConstant('cssClasses', key, Constants.classes[key].replace(/^mapbox-?gl-/, `${prefix}-`));
+    Constants.updateConstant('classes', key, Constants.classes[key].replace(/^mapbox/, `maplibre`));
   }
 };
 
@@ -38,5 +38,5 @@ import modes from './src/modes/index';
 MapboxDraw.modes = modes;
 MapboxDraw.constants = Constants;
 MapboxDraw.lib = lib;
-MapboxDraw.setMapLibCSSPrefix = setMapLibCSSPrefix;
+MapboxDraw.enableMapLibre = enableMapLibre;
 export default MapboxDraw;
