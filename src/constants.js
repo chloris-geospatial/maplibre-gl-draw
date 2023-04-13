@@ -98,3 +98,16 @@ export const LAT_MAX = 90;
 export const LAT_RENDERED_MAX = 85;
 export const LNG_MIN = -270;
 export const LNG_MAX = 270;
+
+/**
+ * Workaround to allow updating of constants for maplibre-gl-draw
+ * @param name - name of constant to update
+ * @param key - key of constant to update
+ * @param value - value to update constant to
+ */
+export function updateConstant(name, key, value) {
+  if (name === 'classes'){
+    classes[key] = value;
+  }
+  throw new Error('Not Implemented');
+}

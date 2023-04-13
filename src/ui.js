@@ -1,5 +1,4 @@
 import xtend from 'xtend';
-import * as Constants from './constants';
 
 const classTypes = ['mode', 'feature', 'mouse'];
 
